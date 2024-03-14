@@ -18,6 +18,7 @@
 
 
     @stack('before-script')
+    <script src="https://cdn.tailwindcss.com"></script>
     @stack('after-script')
     
 
