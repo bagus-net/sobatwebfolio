@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('My Projects') }}
+            {{ __('My Tools') }}
         </h2>
     </x-slot>
 
@@ -21,11 +21,11 @@
                 @endif
 
 
-                <form action="{{ route('admin.projects.store') }}" enctype="multipart/form-data" method="POST">
+                <form action="{{ route('admin.tools.store') }}" enctype="multipart/form-data" method="POST">
                     @csrf
 
                     <div class="flex flex-col gap-y-5">
-                        <h1 class="text-3xl text-white font-bold">Add New Project</h1>
+                        <h1 class="text-3xl text-white font-bold">Add New Tool</h1>
 
                         <div class="flex flex-col gap-y-2">
                             <label for="name" class="text-gray-300">Name</label>
@@ -33,33 +33,23 @@
                                 class="border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300">
                         </div>
 
-                        <div class="flex flex-col gap-y-2">
-                            <label for="category" class="text-gray-300">Category</label>
-                            <select id="category" name="category"
-                                class="border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300">
-                                <option value="">Choose category below</option>
-                                <option value="Web Development">Web Development</option>
-                                <option value="App Development">App Development</option>
-                                <option value="Graphic Design">Graphic Design</option>
-                            </select>
-                        </div>
 
                         <div class="flex flex-col gap-y-2">
-                            <label for="cover" class="text-gray-300">Cover Image</label>
-                            <input type="file" id="cover" name="cover"
+                            <label for="logo" class="text-gray-300">Logo Image</label>
+                            <input type="file" id="logo" name="logo"
                                 class="border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300">
                         </div>
 
                         <div class="flex flex-col gap-y-2">
-                            <label for="about" class="text-gray-300">About</label>
-                            <textarea name="about" id="about" cols="30" rows="10"
-                                class="border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300"></textarea>
+                            <label for="tagline" class="text-gray-300">tagline</label>
+                            <input type="text" id="tagline" name="tagline"
+                                class="border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300">
                         </div>
                     </div>
 
                     <br>
                     <button type="submit" class="py-4 w-full rounded-full bg-violet-700 font-bold text-white">Upload
-                        Project</button>
+                        Tool</button>
                 </form>
             </div>
         </div>

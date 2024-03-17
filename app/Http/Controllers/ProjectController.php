@@ -15,7 +15,10 @@ class ProjectController extends Controller
     public function index()
     {
         //
-        return view('admin.projects.index');
+        $projects = Project::orderBy("id","desc")->get();
+        return view('admin.projects.index',[
+            'projects'=> $projects
+    ]);
 
     }
 
@@ -32,43 +35,42 @@ class ProjectController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
-        $validated = $request->validate([
-            'name'=> 'required|string|max:255',
-            'category'=> 'required|string|in:Website Development, App Development, Graphic Design',
-            'cover'=> 'required|image|mimes:png|max:2048',
-            'about'=> 'required|string|max:65535',
-        ]);
+{
+    $validated = $request->validate([
+        'name'=> 'required|string|max:255',
+        'category'=> 'required|string',
+        'cover'=> 'required|image|mimes:png|max:2048',
+        'about'=> 'required|string|max:65535',
+    ]);
 
-        DB::beginTransaction();
+    DB::beginTransaction();
 
-        try{
-            if($request->hasFile('cover')){
-                $path = $request->file('cover')->store('projects','public');
-                $validated  ['cover'] = $path;
-            }
-            $validated['slug']= Str::slug($validated['name']);
+    try {
+        if($request->hasFile('cover')) {
+            $path = $request->file('cover')->store('projects', 'public');
+            $validated['cover'] = $path;
+        }
 
-            $newProject=Project::create($validated);
+        $validated['slug'] = Str::slug($request->name);
 
-            DB::commit();
-            
-            return redirect()->route('admin.projects.index')->with('success','Project created successfully');
-        
-    }
-        catch(\Exception $e){
-            DB::rollBack();
-            return redirect()->back()->with('error','System error!'.$e->getMessage()) ;
+        $newProject = Project::create($validated);
+
+        DB::commit();
+
+        return redirect()->route('admin.projects.index')->with('success', 'Project created successfully');
+    } catch(\Exception $e) {
+        DB::rollBack();
+        return redirect()->back()->with('error', 'System error! ' . $e->getMessage());
     }   
 }
+
 
     /**
      * Display the specified resource.
      */
     public function show(Project $project)
     {
-        //
+        
     }
 
     /**
@@ -77,15 +79,46 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         //
+       
+        return view('admin.projects.edit',[
+            'project'=> $project
+    ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Project $project)
-    {
-        //
-    }
+{
+    $validated = $request->validate([
+        'name'=> 'required|string|max:255',
+        'category'=> 'required|string',
+        'cover'=> 'sometimes|image|mimes:png|max:2048',
+        'about'=> 'required|string|max:65535',
+    ]);
+
+    DB::beginTransaction();
+
+    try {
+        if($request->hasFile('cover')) {
+            $path = $request->file('cover')->store('projects', 'public');
+            $validated['cover'] = $path;
+        }
+
+        $validated['slug'] = Str::slug($request->name);
+
+        // Update the project with the validated data
+        $project->update($validated);
+
+        DB::commit();
+
+        return redirect()->route('admin.projects.index')->with('success', 'Project updated successfully');
+    } catch(\Exception $e) {
+        DB::rollBack();
+        return redirect()->back()->with('error', 'System error! ' . $e->getMessage());
+    } 
+}
+
 
     /**
      * Remove the specified resource from storage.
@@ -93,5 +126,14 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         //
+        try {
+            $project->delete();
+            return redirect()->back()->with('success','Project deleted successfully');
+        }
+        catch   (\Exception $e) {
+            DB::rollBack();
+        return redirect()->back()->with('error', 'System error! ' . $e->getMessage());
+    } 
     }
+    
 }
