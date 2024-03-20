@@ -27,7 +27,12 @@
 
                     <div class="flex flex-col gap-y-5">
                         <h1 class="text-3xl text-white font-bold">Assign Tool</h1>
-
+                        <div class="item-project flex flex-row items-center gap-x-5"> 
+                            <img src="{{Storage::url($project->cover)}}" alt="" class="object cover w-[120px] h-[90px] rounded-2xl">
+                            <div class="flex flex-col gap-y-1">
+                               <h3 class ="font-bold text-xl text-white">{{$project->name}}</h3>
+                               <p class ="text-sm text slate-400 text-gray-500"> {{$project->category}}</p> </div>
+                        </div>
                         
 
                         <div class="flex flex-col gap-y-2">
@@ -58,7 +63,7 @@
                 </h3>
 
                                 <div class="flex flex-col gap-y-5">
-                                    @forelse ($tools as $tool)
+                                    @forelse ($project->tools as $tool)
                                         
             
                                     {{-- melakukan foreach data di table project --}}
@@ -74,10 +79,13 @@
                                     <a href="#" class="py-3 px-5 rounded-full bg-white text-indigo">Add Tools</a>
                                     <a href="#" class="py-3 px-5 rounded-full bg-white text-indigo">Add Screenshots</a>
                                 </div> --}}
+                                {{-- {{$tool->pivot->id}} --}}
                                     <div class="flex flex-row items-center gap-x-2">
-                                 
-                                    <a href="{{route('admin.tools.edit',$tool)}}" class="py-3 px-5 rounded-full bg-yellow-500 text-white">Edit</a>
-                                    <a href="#" class="py-3 px-5 rounded-full bg-red-500 text-white">Delete</a>
+                                    <form action="{{route('admin.project_tools.destroy',$tool->pivot->id)}}" method="POST">
+                                        @csrf
+                                        @method ('DELETE')
+                                        <button type="submit" class="py-3 px-5 rounded-full bg-red-500 text-white">Delete</button>
+                                    </form>
                                 </div> </div>       
                         
                         @empty
