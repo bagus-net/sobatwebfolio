@@ -1,10 +1,12 @@
 <footer class="bg-portto-black text-white pb-[50px] border-t-[10px] border-portto-purple">
-    <div class="container max-w-[1130px] mx-auto flex justify-between pt-[100px] pb-[50px] mb-[50px] relative border-b border-[#585867]">
-        <img src="{{asset('images/Ellipse.svg')}}" class="absolute h-[300px] top-[70px] -left-[20px] z-0" alt="icon">
-        <div class="flex shrink-0 h-fit z-10">
+    <div class="container max-w-[1130px] mx-auto flex flex-col lg:flex-row justify-between pt-[100px] pb-[50px] mb-[50px] relative border-b border-[#585867]">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 lg:hidden">
+            <img src="{{asset('images/Ellipse.svg')}}" class="h-[300px]" alt="icon">
+        </div>
+        <div class="flex justify-center lg:justify-start items-center lg:items-start h-fit z-10">
             <img src="{{asset('images/logos/logo.svg')}}" alt="logo">
         </div>
-        <div class="flex gap-[100px] z-10">
+        <div class="flex flex-col gap-[30px] lg:flex-row lg:gap-[100px] z-10">
             <div class="flex flex-col gap-5">
                 <p class="font-bold text-lg">Explore</p>
                 <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300">Services</a>

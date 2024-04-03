@@ -3,7 +3,7 @@
 @section('content')
 
 <section id="Content" class="bg-portto-black flex min-h-screen">
-    <div class="w-[660px] min-h-screen flex flex-col p-[30px_40px] justify-end overflow-hidden bg-[url('{{asset('/images/background/side-image.png')}}')] bg-cover bg-center bg-no-repeat">
+    <div class="w-[660px] min-h-screen flex flex-col p-[30px_40px] justify-end overflow-hidden bg-[url('{{asset('/images/background/side-image.png')}}')] bg-cover bg-center bg-no-repeat hidden lg:flex">
         <div class="flex flex-col bg-white p-[30px] gap-5 rounded-[30px] w-[580px]">
             <div class="flex h-10 items-start overflow-hidden">
                 <img src="{{asset('/images/logos/logo-testi5.svg')}}" class="h-full object-contain" alt="photo">
@@ -33,7 +33,7 @@
             </ul>
         </div>
     @endif
-        <form method="POST" action="{{route('front.book.store')}}" class="flex flex-col gap-5 w-[550px]">
+        <form method="POST" action="{{route('front.book.store')}}" class="flex flex-col gap-5 w-full lg:w-[550px]">
             @csrf
 
             <label class="flex flex-col gap-[10px] font-semibold">

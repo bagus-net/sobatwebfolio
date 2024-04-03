@@ -1643,3 +1643,96 @@ video {
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
 }
+
+/* Untuk layar dengan lebar kurang dari atau sama dengan 768px (tablet dan smartphone) */
+@media (max-width: 768px) {
+  .hero {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+  .hero .flex-col {
+      gap: 20px;
+  }
+  .hero h1 {
+      font-size: 50px;
+      line-height: 60px;
+  }
+  .hero button {
+      font-size: 20px;
+      padding: 20px 30px;
+  }
+}
+
+/* Media query untuk layar kecil (lebar maksimum 768px) */
+@media (max-width: 768px) {
+  .hero .flex-col {
+      align-items: center; /* Mengatur semua item di kolom menjadi berada di tengah */
+  }
+  .explore-button {
+      margin-top: 20px; /* Menambahkan margin atas agar tombol terpisah dari teks di atasnya */
+  }
+}
+
+
+
+ /* Mengurangi ukuran teks pada layar kecil */
+@media (max-width: 768px) {
+  .text-center {
+      text-align: center; /* Memastikan teks berada di tengah pada layar kecil */
+      margin-bottom: 20px; /* Memberi jarak antara setiap elemen */
+  }
+
+  .text-center p {
+      font-size: 12px; /* Ukuran teks yang lebih kecil untuk layar kecil */
+      line-height: 36px; /* Line height yang sesuai */
+  }
+
+  .text-center p.font-extrabold {
+      font-size: 18px; /* Ukuran teks ekstra tebal yang lebih kecil untuk layar kecil */
+  }
+}
+
+
+
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.stat {
+  text-align: center;
+  flex: 1 0 45%; /* 45% atau sesuai kebutuhan */
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .stat {
+      flex: 0 0 auto;
+      width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .flex-wrap {
+      flex-direction: column;
+  }
+  .flex-wrap > * {
+      margin-bottom: 20px; /* Atur jarak antara elemen saat ditumpuk */
+  }
+}
+
+
+
+
+

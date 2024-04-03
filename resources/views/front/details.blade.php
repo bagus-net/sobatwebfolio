@@ -15,13 +15,13 @@
 </section>
 
 <section id="Details" class="container max-w-[1130px] mx-auto pt-[50px]">
-    <div class="flex gap-[50px] justify-between">
+    <div class="flex flex-col lg:flex-row gap-[50px] justify-between">
         <div class="flex flex-col gap-5">
             <h2 class="font-extrabold text-2xl">The First Purpose</h2>
             <div class="description flex flex-col gap-4 font-medium text-lg leading-[38px]">
                 {!!$project->about!!}
             </div>
-            <div class="flex gap-4">
+            <div class="flex flex-col lg:flex-row gap-4">
                 <div class="flex items-center gap-1 bg-[#F4F5F8] p-[8px_10px] rounded-[12px]">
                     <div class="w-5 h-5 flex shrink-0">
                         <img src="{{asset('/images/icons/crown-black.svg')}}" alt="icon">
@@ -44,9 +44,9 @@
         </div>
         <div class="flex flex-col gap-5">
             <h2 class="font-extrabold text-2xl">Software Used</h2>
-            <div class="software-container flex flex-col shrink-0 gap-5 w-[325px]">
+            <div class="software-container flex flex-col gap-5 lg:gap-0 lg:flex-row flex-wrap justify-center">
                 @forelse($project->tools as $tool)
-                <div class="card-software w-full flex items-center bg-[#F4F5F8] rounded-2xl p-5 gap-4 transition-all duration-300 hover:ring-2 hover:ring-portto-purple">
+                <div class="card-software w-full lg:w-[325px] flex items-center bg-[#F4F5F8] rounded-2xl p-5 gap-4 transition-all duration-300 hover:ring-2 hover:ring-portto-purple">
                     <div class="w-[70px] h-[70px] bg-white rounded-full flex shrink-0 items-center justify-center">
                         <img src="{{Storage::url($tool->logo)}}" alt="tool">
                     </div>
@@ -58,11 +58,11 @@
                 @empty
                 <p>belum ada software ditambahkan</p>
                 @endforelse
-                
             </div>
         </div>
     </div>
 </section>
+
 
 <section id="Screenshots" class="container max-w-[1130px] mx-auto pt-[50px]">
     <div class="flex flex-col gap-5">
@@ -82,34 +82,34 @@
 </section>
 
 <section id="Featured-testimonial" class="container max-w-[1130px] mx-auto">
-    <div class="flex gap-[100px] items-center px-[65px] pt-[100px]">
+    <div class="flex flex-col lg:flex-row gap-[50px] lg:gap-[100px] items-center px-[20px] lg:px-[65px] pt-[50px] lg:pt-[100px]">
         <div class="flex flex-col gap-5 relative">
-            <div class="flex w-[200px] h-[250px] rounded-[30px] shrink-0 overflow-hidden z-10">
-                <img src="{{asset('/images/photo/photo5.png')}}" alt="photo">
+            <div class="flex w-[200px] h-[250px] lg:w-[250px] lg:h-[300px] rounded-[30px] overflow-hidden z-10">
+                <img src="{{asset('/images/photo/photo5.png')}}" alt="photo" class="w-full h-full object-cover">
             </div>
             <div class="flex flex-col gap-[6px] text-center">
-                <p class="font-bold text-2xl">Shirley Pop</p>
-                <p class="text-xl text-[#878C9C]">Founder Bwalajar</p>
+                <p class="font-bold text-2xl lg:text-3xl">Shirley Pop</p>
+                <p class="text-xl lg:text-2xl text-[#878C9C]">Founder Bwalajar</p>
             </div>
-            <img src="{{asset('/images/icons/quote.svg')}}" class="absolute transform -translate-x-1/2 -translate-y-1/2 left-[21px] top-[14px]" alt="icon">
+            <img src="{{asset('/images/icons/quote.svg')}}" class="absolute transform -translate-x-1/2 -translate-y-1/2 left-[21px] top-[14px] lg:left-[50%] lg:top-[30px]" alt="icon">
         </div>
-        <div class="flex flex-col gap-[50px]">
-            <div class="flex shrink-0">
-                <img src="{{asset('/images/logos/logo-testi5.svg')}}" alt="logo">
+        <div class="flex flex-col gap-[30px] lg:gap-[50px]">
+            <div class="flex items-center justify-center lg:justify-start">
+                <img src="{{asset('/images/logos/logo-testi5.svg')}}" alt="logo" class="h-[60px] lg:h-[80px]">
             </div>
-            <p class="font-semibold text-[32px] leading-[60px]">She helped us to build our first prototype to win our investor and early users heart that generate huge attraction. Will hire her back again anytime soon.</p>
-            <div class="flex h-8 w-fit shrink-0">
-                <img src="{{asset('/images/icons/Star.svg')}}" class="w-full h-full" alt="star">
-                <img src="{{asset('/images/icons/Star.svg')}}" class="w-full h-full" alt="star">
-                <img src="{{asset('/images/icons/Star.svg')}}" class="w-full h-full" alt="star">
-                <img src="{{asset('/images/icons/Star.svg')}}" class="w-full h-full" alt="star">
-                <img src="{{asset('/images/icons/Star.svg')}}" class="w-full h-full" alt="star">
+            <p class="font-semibold text-lg lg:text-xl leading-[30px] lg:leading-[60px] text-center lg:text-left">She helped us to build our first prototype to win our investor and early users heart that generate huge attraction. Will hire her back again anytime soon.</p>
+            <div class="flex justify-center lg:justify-start">
+                <img src="{{asset('/images/icons/Star.svg')}}" class="w-[20px] lg:w-[30px]" alt="star">
+                <img src="{{asset('/images/icons/Star.svg')}}" class="w-[20px] lg:w-[30px]" alt="star">
+                <img src="{{asset('/images/icons/Star.svg')}}" class="w-[20px] lg:w-[30px]" alt="star">
+                <img src="{{asset('/images/icons/Star.svg')}}" class="w-[20px] lg:w-[30px]" alt="star">
+                <img src="{{asset('/images/icons/Star.svg')}}" class="w-[20px] lg:w-[30px]" alt="star">
             </div>
         </div>
     </div>
 </section>
 
-<section id="Book"  class="container max-w-[1130px] mx-auto">
+<section id="Book" class="container max-w-[1130px] mx-auto">
     <div class="bg-portto-black flex justify-between px-[50px] rounded-[50px] h-[476px] mt-[100px] bg-[url('{{asset('/images/Ellipse.svg')}}')] bg-center bg-no-repeat bg-contain bg-[length:400px_400px] relative">
         <div class="group/projects w-[220px] overflow-hidden">    
             <div class="slider flex flex-col h-max justify-center">
@@ -199,6 +199,7 @@
         </div>
     </div>
 </section>
+
 
 {{-- ambil komponen faq di components--}}
 <x-faq/>
