@@ -1,7 +1,8 @@
 @extends('front/layouts/app')
 @section('title', 'Sobatwebfolio')
-@section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@section('content')
+
 
 <section id="Header" class="flex flex-col gap-[100px] bg-portto-black relative">
     <x-nav/>
@@ -73,7 +74,7 @@
             </div>
         </div>
     </div>
-    <div class="stats container max-w-[1130px] mx-auto bg-gradient-to-r from-[#FFEDD3] to-[#FFCD83] flex justify-between items-center px-[100px] rounded-[30px] w-full h-[180px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2">
+    {{-- <div class="stats container max-w-[1130px] mx-auto bg-gradient-to-r from-[#FFEDD3] to-[#FFCD83] flex justify-between items-center px-[100px] rounded-[30px] w-full h-[180px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2">
         <div class="text-center w-fit h-fit">
             <p class="font-extrabold text-[40px] leading-[60px]">$230M</p>
             <p class="font-semibold text-lg">Valuation</p>
@@ -93,7 +94,7 @@
         <div class="text-center w-fit h-fit">
             <p class="font-extrabold text-[40px] leading-[60px]">562</p>
             <p class="font-semibold text-lg">Companies</p>
-        </div>
+        </div> --}}
     </div>
     
 </section>
@@ -101,69 +102,69 @@
 <section id="Services" class="container max-w-[1130px] mx-auto pt-[190px] pb-[100px]">
     <div class="flex flex-col gap-[50px] md:flex-row md:items-center md:justify-between">
         <h2 class="font-extrabold text-[50px] leading-[70px] md:text-[40px] md:leading-[60px]">Actually, I Do Design <br>& Code for Living</h2>
-        <a href="" class="font-bold text-lg bg-portto-black rounded-full w-fit h-fit p-[14px_30px] text-white transition-all duration-300 hover:bg-white hover:text-portto-black hover:ring hover:ring-portto-black">All Services</a>
+        <a href="" class="font-bold text-lg bg-portto-black rounded-full w-fit h-fit p-[14px_30px] text-white transition-all duration-300 hover:bg-white hover:text-portto-black hover:ring hover:ring-portto-black ">All Services</a>
     </div>
     </div>
+    <br>
 
 
-    <div class="grid grid-cols-2 gap-10">
-        <div class="p-5 rounded-lg bg-gray-200">
-            <div class="flex flex-col gap-5">
-                <div class="w-full md:w-[350px]">
-                    <img src="{{asset('images/services1.png')}}" class="w-full object-cover" alt="image">
-                </div>
-                <div class="flex flex-col gap-5">
-                    <p class="font-extrabold text-[32px] leading-[48px]">High-Quality Mobile App UI/UX Design</p>
-                    <p class="text-lg leading-[34px]">Delivering great experience to users so that they are comfortable while using your product.</p>
-                </div>
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+    <div class="p-5 rounded-lg bg-gray-200">
+        <div class="flex flex-col gap-5">
+            <div class="w-full md:w-[350px]">
+                <img src="{{asset('images/services1.png')}}" class="w-full object-cover" alt="image">
             </div>
-        </div>
-        <div class="p-5 rounded-lg bg-gray-200">
             <div class="flex flex-col gap-5">
-                <div class="w-full md:w-[350px]">
-                    <img src="{{asset('images/services2.png')}}" class="w-full object-cover" alt="image">
-                </div>
-                <div class="flex flex-col gap-5">
-                    <p class="font-extrabold text-[32px] leading-[48px]">AI Business Dashboard Finance Company</p>
-                    <p class="text-lg leading-[34px]">Delivering great experience to users so that they are comfortable while using product.</p>
-                </div>
-            </div>
-        </div>
-        <div class="p-5 rounded-lg bg-gray-200">
-            <div class="flex flex-col gap-5">
-                <div class="w-full md:w-[350px]">
-                    <img src="{{asset('images/services3.png')}}" class="w-full object-cover" alt="image">
-                </div>
-                <div class="flex flex-col gap-5">
-                    <div class="flex items-center justify-center w-20 h-20 rounded-full bg-portto-red">
-                        <img src="{{asset('images/icons/3dcube.svg')}}" class="w-10 h-10 object-contain" alt="icon">
-                    </div>
-                    <p class="font-extrabold text-[32px] leading-[48px]">Robust Plugins Connected Machine Learning</p>
-                    <p class="text-lg leading-[34px]">Delivering great experience to users so that they are comfortable while using your product to grow.</p>
-                </div>
-            </div>
-        </div>
-        <div class="p-5 rounded-lg bg-gray-200">
-            <div class="flex flex-col gap-5">
-                <div class="w-full md:w-[350px]">
-                    <img src="{{asset('images/services4.png')}}" class="w-full object-cover" alt="image">
-                </div>
-                <div class="flex flex-col gap-5">
-                    <div class="flex items-center justify-center w-20 h-20 rounded-full bg-portto-green">
-                        <img src="{{asset('images/icons/code.svg')}}" class="w-10 h-10 object-contain" alt="icon">
-                    </div>
-                    <p class="font-extrabold text-[32px] leading-[48px]">Web Development & Code for Living</p>
-                    <p class="text-lg leading-[34px]">Delivering great experience to users so that they are comfortable while using your product.</p>
-                </div>
+                <p class="font-extrabold text-[32px] leading-[48px]">High-Quality Mobile App UI/UX Design</p>
+                <p class="text-lg leading-[34px]">Delivering great experience to users so that they are comfortable while using your product.</p>
             </div>
         </div>
     </div>
-              
+    <div class="p-5 rounded-lg bg-gray-200">
+        <div class="flex flex-col gap-5">
+            <div class="w-full md:w-[350px]">
+                <img src="{{asset('images/services2.png')}}" class="w-full object-cover" alt="image">
+            </div>
+            <div class="flex flex-col gap-5">
+                <p class="font-extrabold text-[32px] leading-[48px]">AI Business Dashboard Finance Company</p>
+                <p class="text-lg leading-[34px]">Delivering great experience to users so that they are comfortable while using product.</p>
+            </div>
+        </div>
+    </div>
+    <div class="p-5 rounded-lg bg-gray-200">
+        <div class="flex flex-col gap-5">
+            <div class="w-full md:w-[350px]">
+                <img src="{{asset('images/services3.png')}}" class="w-full object-cover" alt="image">
+            </div>
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center justify-center w-20 h-20 rounded-full bg-portto-red">
+                    <img src="{{asset('images/icons/3dcube.svg')}}" class="w-10 h-10 object-contain" alt="icon">
+                </div>
+                <p class="font-extrabold text-[32px] leading-[48px]">Robust Plugins Connected Machine Learning</p>
+                <p class="text-lg leading-[34px]">Delivering great experience to users so that they are comfortable while using your product to grow.</p>
+            </div>
+        </div>
+    </div>
+    <div class="p-5 rounded-lg bg-gray-200">
+        <div class="flex flex-col gap-5">
+            <div class="w-full md:w-[350px]">
+                <img src="{{asset('images/services4.png')}}" class="w-full object-cover" alt="image">
+            </div>
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center justify-center w-20 h-20 rounded-full bg-portto-green">
+                    <img src="{{asset('images/icons/code.svg')}}" class="w-10 h-10 object-contain" alt="icon">
+                </div>
+                <p class="font-extrabold text-[32px] leading-[48px]">Web Development & Code for Living</p>
+                <p class="text-lg leading-[34px]">Delivering great experience to users so that they are comfortable while using your product.</p>
+            </div>
+        </div>
+    </div>
+</div>         
 </section>
 
-<section id="Projects" class=" w-full flex flex-col py-[100px] bg-[url('{{asset('images/background/background1.png')}}')] bg-cover bg-center bg-no-repeat">
-    <div class="flex flex-col gap-[10px] mb-[50px]">
-        <h2 class="font-extrabold text-[50px] leading-[70px] text-center text-white">Great Projects</h2>
+<section id="Projects" class="w-full flex flex-col py-10 md:py-20 bg-[url('{{asset('images/background/background1.png')}}')] bg-cover bg-center bg-no-repeat">
+    <div class="flex flex-col gap-5 mb-10 md:mb-20">
+        <h2 class="font-extrabold text-4xl md:text-6xl leading-10 md:leading-[70px] text-center text-white">Great Projects</h2>
         <p class="text-lg text-center text-white">Working with awesome team from around the world</p>
     </div>
     <div class="projects w-full flex flex-col mb-[30px] overflow-hidden">    
@@ -173,7 +174,7 @@
                 @forelse($projects as $index => $project)
                 @if ($index<3)
 
-                <div class="group w-[650px] h-[450px] flex shrink-0 rounded-[30px] border border-white p-5 bg-[#FFFFFF33] backdrop-blur relative">
+                <div class="group w-[650px] h-[450px]  flex shrink-0 rounded-[30px] border border-white p-5 bg-[#FFFFFF33] backdrop-blur relative">
                     <div class="w-[608px] h-[408px] rounded-[30px] overflow-hidden absolute">
                         <img src="{{Storage::url($project->cover)}}" class="w-full h-full object-cover" alt="thumbnail">
                     </div>
@@ -212,8 +213,7 @@
                 @endif
                @empty
                @endforelse
-              
-                
+
             </div>
         </div>
     </div>
@@ -266,7 +266,7 @@
 
 <section id="Workflow" class="container max-w-[1130px] mx-auto pt-[100px] pb-[200px] relative">
     <div class="flex flex-col gap-[50px] justify-center items-center"> <!-- Added items-center -->
-        <h2 class="font-extrabold text-[50px] leading-[70px] text-center">My Workflow Suitable <br>For Any Project</h2>
+        <h2 class="font-extrabold text-[40px] leading-[70px] text-center">My Workflow Suitable <br>For Any Project</h2>
         <div class="flex justify-between flex-wrap gap-5"> <!-- Changed flex-col to flex and added flex-wrap -->
             <div class="w-[350px] flex flex-col shrink-0 gap-[30px] items-center"> <!-- Changed flex-none to items-center -->
                 <img src="{{asset('images/icons/messages-notif.svg')}}" alt="icon"> <!-- Removed flex-none -->
@@ -291,7 +291,7 @@
             </div>
         </div>
     </div>
-    <div class="stats container max-w-[1130px] mx-auto bg-gradient-to-r from-[#FFEDD3] to-[#FFCD83] flex justify-between items-center px-[100px] rounded-[30px] w-full h-[180px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2">
+    {{-- <div class="stats container max-w-[1130px] mx-auto bg-gradient-to-r from-[#FFEDD3] to-[#FFCD83] flex justify-between items-center px-[100px] rounded-[30px] w-full h-[180px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2">
         <div class="text-center w-fit h-fit">
             <p class="font-extrabold text-[40px] leading-[60px]">$230M</p>
             <p class="font-semibold text-lg">Valuation</p>
@@ -311,7 +311,7 @@
         <div class="text-center w-fit h-fit">
             <p class="font-extrabold text-[40px] leading-[60px]">562</p>
             <p class="font-semibold text-lg">Companies</p>
-        </div>
+        </div> --}}
     </div>
 </section>
 
@@ -319,8 +319,8 @@
 
 <section id="Testimonials" class="bg-[#F4F5F8]">
     <div class="container max-w-[1130px] mx-auto pt-[180px] pb-[100px]">
-        <h2 class="font-extrabold text-[50px] leading-[70px] text-center">I Have Delivered Success <br>For All My Clients</h2>
-        <div class="grid grid-cols-2 gap-[30px] mt-[50px]">
+        <h2 class="font-extrabold text-[35px] leading-[70px] text-center">I Have Delivered Success <br>For All My Clients</h2>
+        <div class="grid grid-cols-1 grid-cols-1 md:grid-cols-2 gap-[30px] mt-[50px]">
             <div class="card-testi bg-white rounded-[30px] flex flex-col p-5 gap-5">
                 <div class="h-[40px] flex shrink-0">
                     <img src="{{asset('images/logos/logo-testi.svg')}}" alt="logo">
@@ -412,6 +412,7 @@
         </div>
     </div>
 </section>
+
 
 
 {{-- ambil komponen faq di components--}}
