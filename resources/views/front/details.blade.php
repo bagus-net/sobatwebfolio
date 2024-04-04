@@ -44,10 +44,10 @@
         </div>
         <div class="flex flex-col gap-5">
             <h2 class="font-extrabold text-2xl">Software Used</h2>
-            <div class="software-container flex flex-col gap-5 lg:gap-0 lg:flex-row flex-wrap justify-center">
+            <div class="software-container grid grid-cols-1 gap-5 justify-center">
                 @forelse($project->tools as $tool)
-                <div class="card-software w-full lg:w-[325px] flex items-center bg-[#F4F5F8] rounded-2xl p-5 gap-4 transition-all duration-300 hover:ring-2 hover:ring-portto-purple">
-                    <div class="w-[70px] h-[70px] bg-white rounded-full flex shrink-0 items-center justify-center">
+                <div class="card-software w-full flex items-center bg-[#F4F5F8] rounded-2xl p-5 gap-4 transition-all duration-300 hover:ring-2 hover:ring-portto-purple">
+                    <div class="w-[70px] h-[70px] bg-white rounded-full flex-shrink-0 items-center justify-center">
                         <img src="{{Storage::url($tool->logo)}}" alt="tool">
                     </div>
                     <div class="flex flex-col gap-[2px]">
@@ -60,6 +60,7 @@
                 @endforelse
             </div>
         </div>
+        
     </div>
 </section>
 
@@ -69,7 +70,7 @@
         <h2 class="font-extrabold text-2xl">Screenshots</h2>
         <div class="grid grid-cols-4 gap-5">
             @forelse ($project->screenshots as $screenshot)
-            <a href="{{Storage::url($screenshot->screenshot)}}" class="group w-full h-[190px] flex overflow-hidden rounded-[30px] ring-1 ring-[#E4E5E8] transition-all duration-300 hover:ring-[3px] hover:ring-portto-purple relative" data-fancybox="gallery" data-caption="Screenshot #1">
+            <a href="{{Storage::url($screenshot->screenshot)}}" class="group md: w-full h-[190px]  flex overflow-hidden rounded-[30px] ring-1 ring-[#E4E5E8] transition-all duration-300 hover:ring-[3px] hover:ring-portto-purple relative" data-fancybox="gallery" data-caption="Screenshot #1">
                 <img src="{{Storage::url($screenshot->screenshot)}}" class="w-full h-full object-cover" alt="thumbnail">
                 <img src="{{asset('/images/icons/eye.svg')}}" class="absolute transition-all duration-300 opacity-0 group-hover:opacity-100  transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-10" alt="icon eye">
             </a>
@@ -111,26 +112,7 @@
 
 <section id="Book" class="container max-w-[1130px] mx-auto">
     <div class="bg-portto-black flex justify-between px-[50px] rounded-[50px] h-[476px] mt-[100px] bg-[url('{{asset('/images/Ellipse.svg')}}')] bg-center bg-no-repeat bg-contain bg-[length:400px_400px] relative">
-        <div class="group/projects w-[220px] overflow-hidden">    
-            <div class="slider flex flex-col h-max justify-center">
-                <div class="project-container animate-[slideToT_30s_linear_infinite] group-hover/projects:pause-animate flex flex-col gap-[30px] pt-[30px] justify-center">
-                    <div class="w-full h-[160px] flex shrink-0 rounded-[30px] border border-white p-[10px] bg-[#FFFFFF33] backdrop-blur">
-                        <div class="w-full h-full rounded-[20px] overflow-hidden">
-                            <img src="{{asset('/images/thumbnails/thumbnail1.png')}}" class="w-full h-full object-cover" alt="thumbnail">
-                        </div>
-                    </div>
-                    <div class="w-full h-[160px] flex shrink-0 rounded-[30px] border border-white p-[10px] bg-[#FFFFFF33] backdrop-blur">
-                        <div class="w-full h-full rounded-[20px] overflow-hidden">
-                            <img src="{{asset('/images/thumbnails/thumbnail2.png')}}" class="w-full h-full object-cover" alt="thumbnail">
-                        </div>
-                    </div>
-                    <div class="w-full h-[160px] flex shrink-0 rounded-[30px] border border-white p-[10px] bg-[#FFFFFF33] backdrop-blur">
-                        <div class="w-full h-full rounded-[20px] overflow-hidden">
-                            <img src="{{asset('/images/thumbnails/thumbnail3.png')}}" class="w-full h-full object-cover" alt="thumbnail">
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="group/projects w-[220px] overflow-hidden hidden md:flex">    
             <div class="slider flex flex-col h-max justify-center">
                 <div class="project-container animate-[slideToT_30s_linear_infinite] group-hover/projects:pause-animate flex flex-col gap-[30px] pt-[30px] justify-center">
                     <div class="w-full h-[160px] flex shrink-0 rounded-[30px] border border-white p-[10px] bg-[#FFFFFF33] backdrop-blur">
@@ -157,7 +139,8 @@
             <p class="font-semibold text-lg leading-[32px] text-white">I will dedicate my entire career to focus <br>on finishing your future dreams</p>
             <a href="{{route('front.book')}}" class="bg-portto-light-gold font-bold text-lg p-[14px_30px] rounded-full transition-all duration-300 hover:shadow-[0_10px_20px_0_#FFE7C280]">Book a Meeting</a>
         </div>
-        <div class="group/projects w-[220px] overflow-hidden">    
+        
+        <div class="group/projects w-[220px] overflow-hidden hidden md:flex">    
             <div class="slider flex flex-col h-max justify-center">
                 <div class="project-container animate-[slideToB_30s_linear_infinite] group-hover/projects:pause-animate flex flex-col gap-[30px] pt-[30px] justify-center">
                     <div class="w-full h-[160px] flex shrink-0 rounded-[30px] border border-white p-[10px] bg-[#FFFFFF33] backdrop-blur">
@@ -177,28 +160,11 @@
                     </div>
                 </div>
             </div>
-            <div class="slider flex flex-col h-max justify-center">
-                <div class="project-container animate-[slideToB_30s_linear_infinite] group-hover/projects:pause-animate flex flex-col gap-[30px] pt-[30px] justify-center">
-                    <div class="w-full h-[160px] flex shrink-0 rounded-[30px] border border-white p-[10px] bg-[#FFFFFF33] backdrop-blur">
-                        <div class="w-full h-full rounded-[20px] overflow-hidden">
-                            <img src="{{asset('/images/thumbnails/thumbnail1.png')}}" class="w-full h-full object-cover" alt="thumbnail">
-                        </div>
-                    </div>
-                    <div class="w-full h-[160px] flex shrink-0 rounded-[30px] border border-white p-[10px] bg-[#FFFFFF33] backdrop-blur">
-                        <div class="w-full h-full rounded-[20px] overflow-hidden">
-                            <img src="{{asset('/images/thumbnails/thumbnail2.png')}}" class="w-full h-full object-cover" alt="thumbnail">
-                        </div>
-                    </div>
-                    <div class="w-full h-[160px] flex shrink-0 rounded-[30px] border border-white p-[10px] bg-[#FFFFFF33] backdrop-blur">
-                        <div class="w-full h-full rounded-[20px] overflow-hidden">
-                            <img src="{{asset('/images/thumbnails/thumbnail3.png')}}" class="w-full h-full object-cover" alt="thumbnail">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 {{-- ambil komponen faq di components--}}
