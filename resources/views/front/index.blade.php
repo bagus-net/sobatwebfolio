@@ -8,13 +8,13 @@
     <x-nav/>
     <div class="hero container max-w-[1130px] mx-auto  flex justify-between items-center relative ">
         <div class="flex flex-col gap-[50px] h-fit w-fit text-white z-10">
-            <p class="font-semibold text-2xl">I’m Shayna 👋</p>
-            <h1 class="font-extrabold text-[80px] leading-[90px]">Professional Designer & Dev</h1>
+            <p class="font-semibold text-2xl">I’m Bagus 👋</p>
+            <h1 class="font-extrabold text-[80px] leading-[90px]">IT & FullStack Developers</h1>
             <button class="font-bold text-[26px] leading-[39px] rounded-[30px] p-[30px_40px] bg-portto-purple w-fit transition-all duration-300 hover:shadow-[0_10px_20px_0_#4920E5] explore-button">Explore Now</button>
 
         </div>
         <div class="flex max-w-[471px] max-h-[567px] z-10">
-            <img src="{{asset('images/hero-image.png')}}" class="w-full h-full object-contain" alt="hero image">
+            <img src="{{asset('images/bagus-putih.png')}}" class="w-full h-full object-contain" alt="hero image">
         </div>
         <img src="{{asset('images/Ellipse.svg')}}" class="absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2" alt="background icon">
     </div>

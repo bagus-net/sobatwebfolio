@@ -1,6 +1,6 @@
 <nav class="container max-w-[1130px] mx-auto flex justify-between items-center pt-[30px] z-10">
     <a href="index.html" class="flex-shrink-0 h-fit w-fit">
-        <img src="{{asset('/images/logos/logo.svg')}}" alt="logo">
+        <img src="{{asset('/images/logos/logo-sw.svg')}}" alt="logo" width="250">
     </a>
     <div class="flex gap-[50px] items-center">
         <ul class="flex gap-[50px] items-center text-white hidden lg:flex"> <!-- Tambahkan kelas 'hidden lg:flex' untuk menyembunyikan navbar saat tampilan berubah menjadi mode ponsel -->
